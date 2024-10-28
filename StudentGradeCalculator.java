@@ -1,18 +1,18 @@
 import java.util.Scanner;
 public class StudentGradeCalculator{
-  static int totalmarks(int maths,int english,int hindi,int computer){
+  static int totalMarks(int maths,int english,int hindi,int computer){
     int sum=maths+english+hindi+computer;
     return sum;
   }
     
 
- static double averagePercentage(int totalmarks){
-  double averagePercent=(totalsum/400.0)*100;
+ static double averagePercentage(int totalMarks){
+  double averagePercent=(totalMarks/400.0)*100;
    return averagePercent;
  }
    
 
-static string grade(double averagePercent){
+static String grade(double averagePercent){
   if (averagePercent >= 87.5) {
       return "Grade A";
     } else if (averagePercent >= 75) {
@@ -25,7 +25,7 @@ static string grade(double averagePercent){
   }
  
   static void display(int totalMarks, double averagePercent, String grade){
-    System.out.println("Your total marks is - "+totalmarks);
+    System.out.println("Your total marks is - "+totalMarks);
     System.out.println("Your average percentage  is - "+averagePercent);
     System.out.println("Your grade is - "+grade);
   }
@@ -45,7 +45,7 @@ static string grade(double averagePercent){
     // Calculate total marks, average percentage, and grade
     int total = totalMarks(maths, english, hindi, computer);
     double averagePercent = averagePercentage(total);
-    String grade = calculateGrade(averagePercent);
+    String grade = grade(averagePercent);
     // Display the results
     display(total, averagePercent, grade);
 

@@ -1,1 +1,37 @@
+import java.util.*;
+public class Quiz {
+ static Scanner sc=new Scanner (System.in);
+ static int score;
 
+ public static void main(String args[]){
+    String questions[][]={
+     {"Who won the Nobel Prize in Literature in 1913?","1)Sir C.V. Raman","2)Mother Teresa","3)Kailash Satyarthi","4)Rabindra Nath Tagore","4"},
+     {"What is the capital of Pakistan?","1)Dhaka","2)Islamabad","3)Colombo","4)Kabul","2"},
+     {"Which animal is the largest and heaviest animal in the world?","1)Deer","2)Rabbit","3)Blue Whale","4)Sea Turtle","3"},
+     {"Who sell medicines?","1)Chemist","2)Florist","3)Dentist","4)Coach","1"},
+     {"An output device used to display the information on the screen is-","1)Printer","2)Monitor","3)Mouse","4)Scanner","2"}
+   };
+   for (String q[]: questions) {
+     System.out.println(q[0]);
+     for (int i=1;i<=4;i++) {
+      System.out.println(q[i]);
+     }
+  Timer timer = new Timer();
+   timer.schedule(new TimerTask() {
+     public void run() {
+      System.out.println("Time's up!");
+      sc.close();
+      System.exit(0);
+    }
+  },10000);
+  System.out.print("Answer :  ");
+  String ans=sc.nextLine();
+  timer.cancel();
+  if (ans.equals(q[5])){
+    score++;
+ }
+}
+System.out.println("Quiz Over! Your score: " + score + "/" + questions.length);
+sc.close();
+}
+}
